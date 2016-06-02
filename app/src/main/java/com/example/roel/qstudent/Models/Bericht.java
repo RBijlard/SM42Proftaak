@@ -1,4 +1,4 @@
-package com.example.roel.qstudent;
+package com.example.roel.qstudent.Models;
 
 /**
  * Created by Roel on 02/06/2016.

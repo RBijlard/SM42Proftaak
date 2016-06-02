@@ -1,4 +1,4 @@
-package com.example.roel.qstudent;
+package com.example.roel.qstudent.Models;
 
 import java.util.List;
 
