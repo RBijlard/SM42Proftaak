@@ -9,9 +9,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends NavBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        super.setupBar(this);
     }
 
     @Override
