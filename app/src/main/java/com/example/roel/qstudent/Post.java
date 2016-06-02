@@ -8,10 +8,12 @@ import java.util.List;
 public class Post {
     private String naam;
     private List<Bericht> berichten;
+    private Student poster;
 
-    public Post(String naam, List<Bericht> berichten) {
+    public Post(String naam, Student poster ,List<Bericht> berichten) {
         this.naam = naam;
         this.berichten = berichten;
+        this.poster = poster;
     }
 
     public List<Bericht> getBerichten() {
@@ -28,5 +30,13 @@ public class Post {
 
     public void setNaam(String naam) {
         this.naam = naam;
+    }
+
+    public Student getPoster() {
+        return poster;
+    }
+
+    public void setPoster(Student poster) {
+        this.poster = poster;
     }
 }
