@@ -12,6 +12,8 @@ public class Cijfer {
     public String onderwerp;
     public List<Cijfer> deelcijfers;
 
+    public double cijfer=1;
+
     public Cijfer(String naamVak, String onderwerp, @Nullable List<Cijfer> deelcijfers) {
         this.naamVak = naamVak;
         this.onderwerp = onderwerp;
@@ -19,6 +21,14 @@ public class Cijfer {
         if (deelcijfers != null) {
             this.deelcijfers = deelcijfers;
         }
+    }
+
+    public double getCijfer() {
+        return cijfer;
+    }
+
+    public void setCijfer(double cijfer) {
+        this.cijfer = cijfer;
     }
 
     public String getNaamVak() {

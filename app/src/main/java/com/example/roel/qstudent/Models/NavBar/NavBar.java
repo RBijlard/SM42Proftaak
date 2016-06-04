@@ -1,11 +1,14 @@
 package com.example.roel.qstudent.Models.NavBar;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.roel.qstudent.Activitys.MainActivity;
+import com.example.roel.qstudent.Activitys.ProfileActivity;
 import com.example.roel.qstudent.R;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
@@ -27,11 +30,16 @@ public class NavBar extends AppCompatActivity {
 
     public void setupBar(Activity act) {
         bar = bar.attach(act, null);
+        //bar.useFixedMode(); //Display titles
         bar.setItemsFromMenu(R.menu.bottombar_menu, new OnMenuTabClickListener() {
             @Override
             public void onMenuTabSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.bottomBarItemOne) {
-                    // The user selected item number one.
+                if (menuItemId == R.id.bottomBarItemOne) { //Home
+                    //launchScreen(MainActivity.class);
+                }
+
+                if(menuItemId == R.id.bottomBarItemFour && getApplicationContext().getClass() != ProfileActivity.class) { //Profile
+                    launchScreen(ProfileActivity.class);
                 }
             }
 
@@ -42,7 +50,12 @@ public class NavBar extends AppCompatActivity {
                 }
             }
         });
-        bar.useFixedMode(); //Display titles
+    }
+
+    public void launchScreen(Class scr) {
+        Intent i = new Intent(this, scr);
+        startActivity(i);
+        finish();
     }
 
     @Override
