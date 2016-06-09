@@ -12,6 +12,11 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="tabTitle">
+        <item name="android:textColor">@color/titleOrange</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">25dp</item>
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

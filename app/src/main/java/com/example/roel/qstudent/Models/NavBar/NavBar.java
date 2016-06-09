@@ -1,10 +1,12 @@
 package com.example.roel.qstudent.Models.NavBar;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.roel.qstudent.Activitys.MainActivity;
@@ -18,41 +20,39 @@ import com.roughike.bottombar.OnTabClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NavBar extends AppCompatActivity {
+public class NavBar extends AppCompatActivity implements OnMenuTabClickListener {
 
-    private BottomBar bar;
+    private static BottomBar bar;
+    private boolean init=false;
+    private Context con;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MenuItems menu = new MenuItems();
-        //setContentView(R.layout.activity_nav_bar)
     }
 
-    public void setupBar(Activity act) {
-        bar = bar.attach(act, null);
-        //bar.useFixedMode(); //Display titles
-        bar.setItemsFromMenu(R.menu.bottombar_menu, new OnMenuTabClickListener() {
-            @Override
-            public void onMenuTabSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.bottomBarItemOne) { //Home
-                    //launchScreen(MainActivity.class);
-                }
+    public void setupBar(Activity act, Bundle savedInstanceState) {
+        bar =BottomBar.attach(act, savedInstanceState);
+        //bar.useFixedMode();
 
-                if(menuItemId == R.id.bottomBarItemFour && getApplicationContext().getClass() != ProfileActivity.class) { //Profile
-                    launchScreen(ProfileActivity.class);
-                }
-            }
+        bar.setItemsFromMenu(R.menu.bottombar_menu, this);
+        //bar.setTextAppearance(R.style.tabTitle);
+    }
 
-            @Override
-            public void onMenuTabReSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.bottomBarItemOne) {
-                    // The user reselected item number one, scroll your content to top.
-                }
-            }
-        });
+    public void barLoaded(Activity act) {
+        if(act instanceof MainActivity) {
+            bar.selectTabAtPosition(0, false);
+            init=true;
+        } else if(act instanceof ProfileActivity) {
+            bar.selectTabAtPosition(3, false);
+            init=true;
+        }
     }
 
     public void launchScreen(Class scr) {
+        if(this.getClass() == scr) {
+            Log.d("[BAR]", "Same screen!");
+            return;
+        }
         Intent i = new Intent(this, scr);
         startActivity(i);
         finish();
@@ -65,5 +65,25 @@ public class NavBar extends AppCompatActivity {
         // Necessary to restore the BottomBar's state, otherwise we would
         // lose the current tab on orientation change.
         bar.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onMenuTabSelected(@IdRes int menuItemId) {
+        if(!init) {
+            Log.d("[BAR]:", "init false");
+            return;
+        } else {
+            if(menuItemId == R.id.bottomBarItemOne) {
+                launchScreen(MainActivity.class);
+            }else if(menuItemId == R.id.bottomBarItemFour) {
+                launchScreen(ProfileActivity.class);
+            }
+        }
+        Log.d("[BAR]:", "menu selected");
+    }
+
+    @Override
+    public void onMenuTabReSelected(@IdRes int menuItemId) {
+        Log.d("[BAR]:", "menu reselected");
     }
 }
