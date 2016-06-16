@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.roel.qstudent.Activitys.ProfileActivity">
+    tools:context="com.example.roel.qstudent.Activity's.ProfileActivity">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

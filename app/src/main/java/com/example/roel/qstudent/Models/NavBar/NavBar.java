@@ -6,19 +6,16 @@ import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.util.Log;
 import android.view.View;
+=======
+>>>>>>> sync
 
-import com.example.roel.qstudent.Activitys.MainActivity;
 import com.example.roel.qstudent.Activitys.ProfileActivity;
 import com.example.roel.qstudent.R;
 import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnMenuTabClickListener;
-import com.roughike.bottombar.OnTabClickListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class NavBar extends AppCompatActivity implements OnMenuTabClickListener {
 

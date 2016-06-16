@@ -1,14 +1,11 @@
 package com.example.roel.qstudent.Activitys;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.roel.qstudent.Models.Cijfer;
-import com.example.roel.qstudent.Models.Klas;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.Models.Profile.CijferAdapter;
-import com.example.roel.qstudent.Models.Student;
 import com.example.roel.qstudent.R;
 
 public class ProfileActivity extends NavBar {
