@@ -8,8 +8,11 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.example.roel.qstudent.Activitys.ClassActivity;
 import com.example.roel.qstudent.Activitys.MainActivity;
 import com.example.roel.qstudent.Activitys.ProfileActivity;
+import com.example.roel.qstudent.Activitys.SemesterActivity;
+import com.example.roel.qstudent.Activitys.VakActivity;
 import com.example.roel.qstudent.R;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
@@ -37,6 +40,12 @@ public class NavBar extends AppCompatActivity implements OnMenuTabClickListener 
         if (act instanceof MainActivity) {
             bar.selectTabAtPosition(0, false);
             init = true;
+        } else if(act instanceof SemesterActivity) {
+            bar.selectTabAtPosition(1, false);
+            init=true;
+        } else if(act instanceof ClassActivity) {
+            bar.selectTabAtPosition(2, false);
+            init=true;
         } else if (act instanceof ProfileActivity) {
             bar.selectTabAtPosition(3, false);
             init = true;
@@ -68,9 +77,13 @@ public class NavBar extends AppCompatActivity implements OnMenuTabClickListener 
             Log.d("[BAR]:", "init false");
             return;
         } else {
-            if (menuItemId == R.id.bottomBarItemOne) {
+            if (menuItemId == R.id.bottomBarItemOne) { //Main
                 launchScreen(MainActivity.class);
-            } else if (menuItemId == R.id.bottomBarItemFour) {
+            }else if(menuItemId == R.id.bottomBarItemTwo) { //Semester
+                launchScreen(SemesterActivity.class);
+            }else if(menuItemId == R.id.bottomBarItemThree) { //Vak
+                launchScreen(ClassActivity.class);
+            }else if (menuItemId == R.id.bottomBarItemFour) { //Profile
                 launchScreen(ProfileActivity.class);
             }
         }

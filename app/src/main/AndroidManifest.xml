@@ -20,6 +20,9 @@
         </activity>
         <activity android:name=".Models.NavBar.NavBar" />
         <activity android:name=".Activitys.ProfileActivity"></activity>
+        <activity android:name=".Activitys.VakActivity"></activity>
+        <activity android:name=".Activitys.SemesterActivity"></activity>
+        <activity android:name=".Activitys.ClassActivity"></activity>
     </application>
 
 </manifest>

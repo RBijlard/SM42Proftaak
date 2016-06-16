@@ -15,7 +15,8 @@ public class ClassActivity extends NavBar {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class);
-        super.setupBar(this);
+        super.setupBar(this, savedInstanceState);
+        super.barLoaded(this);
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new PagerAdapter(getSupportFragmentManager());
