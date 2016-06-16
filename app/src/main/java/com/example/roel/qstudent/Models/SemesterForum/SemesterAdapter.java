@@ -1,4 +1,4 @@
-package com.example.roel.qstudent.Models.VakForum;
+package com.example.roel.qstudent.Models.SemesterForum;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.roel.qstudent.Models.Onderdeel;
+import com.example.roel.qstudent.Models.Semester;
 import com.example.roel.qstudent.Models.Vak;
 import com.example.roel.qstudent.R;
 
@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by royti on 15-6-2016.
+ * Created by royti on 16-6-2016.
  */
-public class VakAdapter extends ArrayAdapter<Vak> {
+public class SemesterAdapter extends ArrayAdapter<Semester> {
     Context con;
     int lrID;
-    List<Vak> data;
-    public VakAdapter(Context context, int resource,ArrayList<Vak> data) {
+    List<Semester> data;
+    public SemesterAdapter(Context context, int resource, ArrayList<Semester> data) {
         super(context, resource);
         this.con=context;
         this.lrID=resource;
@@ -36,10 +36,10 @@ public class VakAdapter extends ArrayAdapter<Vak> {
             LayoutInflater inf = ((Activity)con).getLayoutInflater();
             convertView=inf.inflate(lrID,parent,false);
         }
-        Vak v = data.get(position);
-        TextView vakNaam = (TextView) convertView.findViewById(R.id.textViewForumCustList);
+        Semester s= data.get(position);
+        TextView semesterNaam = (TextView) convertView.findViewById(R.id.textViewForumCustList);
 
-        vakNaam.setText(v.getNaam());
+        semesterNaam.setText(s.getNaam());
         return convertView;
     }
 }

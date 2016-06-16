@@ -6,10 +6,8 @@ import android.widget.ListView;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.Models.Onderdeel;
 import com.example.roel.qstudent.Models.OnderdeelForum.OnderdeelAdapter;
-import com.example.roel.qstudent.Models.OnderdeelForum.OnderdeelController;
 import com.example.roel.qstudent.R;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -22,7 +20,7 @@ public class OnderdeelActivity extends NavBar {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onderdeel);
-        super.setupBar(this);
+        super.setupBar(this,savedInstanceState);
 
 
         //Mock Onderdelen:

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.Models.Vak;
 import com.example.roel.qstudent.Models.VakForum.VakAdapter;
-import com.example.roel.qstudent.Models.VakForum.VakController;
 import com.example.roel.qstudent.R;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class VakActivity extends NavBar {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vak);
-        super.setupBar(this);
+        super.setupBar(this,savedInstanceState);
 
         ArrayList<Vak> vakken = new ArrayList<>();
         vakken.add(new Vak("JSF", null));
