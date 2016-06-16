@@ -30,7 +30,8 @@ public class MainActivity extends NavBar {
             }
         });
 
-        super.setupBar(this);
+        super.setupBar(this, savedInstanceState);
+        super.barLoaded(this);
     }
 
     @Override

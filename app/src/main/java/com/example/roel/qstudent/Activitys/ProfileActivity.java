@@ -17,7 +17,8 @@ public class ProfileActivity extends NavBar {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        super.setupBar(this);
+        super.setupBar(this, savedInstanceState);
+        super.barLoaded(this);
 
         //Mock cijfers:
         Cijfer[] cijfers = {
@@ -40,6 +41,6 @@ public class ProfileActivity extends NavBar {
         CijferAdapter ca = new CijferAdapter(this, R.layout.profile_cust_listitem, cijfers);
 
         ListView cijferList = (ListView) findViewById(R.id.profileCijferList);
-        cijferList.setAdapter(ca);
+        //cijferList.setAdapter(ca);
     }
 }
