@@ -19,10 +19,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".Models.NavBar.NavBar" />
-        <activity android:name=".Activitys.ProfileActivity"></activity>
-        <activity android:name=".Activitys.VakActivity"></activity>
-        <activity android:name=".Activitys.SemesterActivity"></activity>
-        <activity android:name=".Activitys.ClassActivity"></activity>
+        <activity android:name=".Activitys.ProfileActivity" />
+        <activity android:name=".Activitys.VakActivity" />
+        <activity android:name=".Activitys.SemesterActivity" />
+        <activity android:name=".Activitys.ClassActivity" />
+        <activity
+            android:name=".Models.Class.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Models.Class.ClassAdapter2"
+            android:label="@string/title_activity_class_adapter2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

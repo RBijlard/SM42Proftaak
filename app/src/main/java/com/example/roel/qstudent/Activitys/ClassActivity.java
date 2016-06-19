@@ -1,16 +1,16 @@
 package com.example.roel.qstudent.Activitys;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.example.roel.qstudent.Models.Class.PagerAdapter;
+import com.example.roel.qstudent.Models.Class.ClassList;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.R;
 
 public class ClassActivity extends NavBar {
-    FragmentPagerAdapter adapterViewPager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,32 +19,55 @@ public class ClassActivity extends NavBar {
         super.barLoaded(this);
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
-        adapterViewPager = new PagerAdapter(getSupportFragmentManager());
-        vpPager.setAdapter(adapterViewPager);
+        vpPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
 
-        // Attach the page change listener inside the activity
-        vpPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            // This method will be invoked when a new page becomes selected.
-            @Override
-            public void onPageSelected(int position) {
-                //Toast.makeText(this, "Selected page position: " + position, Toast.LENGTH_SHORT).show();
-            }
-
-            // This method will be invoked when the current page is scrolled
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                // Code goes here
-            }
-
-            // Called when the scroll state changes:
-            // SCROLL_STATE_IDLE, SCROLL_STATE_DRAGGING, SCROLL_STATE_SETTLING
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                // Code goes here
-            }
-        });
     }
 
+    public class MyAdapter extends FragmentPagerAdapter {
 
+        private int AMOUNT_OF_TABS = 5;
+
+        public MyAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return new ClassList();
+                case 1:
+                    return new ClassList();
+                case 2:
+                    return new ClassList();
+                case 3:
+                    return new ClassList();
+                case 4:
+                    return new ClassList();
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return AMOUNT_OF_TABS;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "S41";
+                case 1:
+                    return "S42";
+                case 2:
+                    return "S43";
+                case 3:
+                    return "S44";
+                case 4:
+                    return "S45";
+            }
+            return "Error";
+        }
+    }
 }

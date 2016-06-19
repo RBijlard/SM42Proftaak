@@ -2,4 +2,8 @@
     <string name="app_name">QStudent</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_klas">KlasActivity</string>
+    <string name="title_activity_class_activity_test">ClassActivityTEST</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_class_list">ClassList</string>
+    <string name="title_activity_class_adapter2">ClassAdapter2</string>
 </resources>
