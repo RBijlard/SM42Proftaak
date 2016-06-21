@@ -8,10 +8,12 @@ import java.util.List;
 public class Onderdeel {
     private String naam;
     private List<Post> posts;
+    private Vak vak;
 
-    public Onderdeel(String naam, List<Post> posts) {
+    public Onderdeel(String naam, List<Post> posts, Vak vak) {
         this.naam = naam;
         this.posts = posts;
+        this.vak = vak;
     }
 
     public String getNaam() {
@@ -28,5 +30,13 @@ public class Onderdeel {
 
     public void setPosts(List<Post> posts) {
         this.posts = posts;
+    }
+
+    public Vak getVak() {
+        return vak;
+    }
+
+    public void setVak(Vak vak) {
+        this.vak = vak;
     }
 }

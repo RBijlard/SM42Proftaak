@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:id="@+id/postStudentPicture"
+        android:scaleType="fitCenter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_height="wrap_content"
+        android:text="Title: "
+        android:layout_width="wrap_content"
+        android:id="@+id/postTitle"
+        android:layout_toRightOf="@+id/postStudentPicture"
+        android:layout_marginTop="6dip"
+        android:layout_marginLeft="6dip"
+        style="@style/post_textsize"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:layout_width="wrap_content"
+        android:id="@+id/postStudentName"
+        android:layout_toRightOf="@+id/postStudentPicture"
+        android:layout_below="@+id/postTitle"
+        android:layout_marginTop="3dip"
+        android:layout_marginLeft="6dip" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:id="@+id/postStudenAmountOfAwnsers"
+        android:layout_toRightOf="@+id/postStudentPicture"
+        android:layout_below="@+id/postStudentName"
+        android:layout_marginTop="3dip"
+        android:layout_marginLeft="170dip" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="Antwoorden"
+        android:layout_width="wrap_content"
+        android:id="@+id/postStudentAwnsers"
+        android:layout_toRightOf="@+id/postStudentPicture"
+        android:layout_below="@+id/postStudenAmountOfAwnsers"
+        android:layout_marginTop="3dip"
+        android:layout_marginLeft="135dip" />
+
+</RelativeLayout>

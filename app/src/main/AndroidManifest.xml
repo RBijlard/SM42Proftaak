@@ -14,14 +14,39 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Models.NavBar.NavBar" />
-        <activity android:name=".Activitys.ProfileActivity" />
-        <activity android:name=".Activitys.VakActivity" />
-        <activity android:name=".Activitys.SemesterActivity" />
-        <activity android:name=".Activitys.ClassActivity" />
+        <activity
+            android:name=".Activitys.Post_activity"
+            android:label="@string/title_activity_post"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activitys.PostList"
+            android:label="@string/title_activity_post_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activitys.ActivityTest2"
+            android:label="@string/title_activity_activity_test2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activitys.postAwnsers"
+            android:label="@string/title_activity_post_awnsers"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activitys.AwnserList"
+            android:label="@string/title_activity_awnser_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Reactie"
+            android:label="@string/title_activity_reactie"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activitys.postitemrow"
+            android:label="@string/title_activity_postitemrow"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -1,18 +1,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/bottomBarItemOne"
-        android:icon="@mipmap/ic_home"
+        android:icon="@mipmap/ic_launcher"
         android:title="Home" />
     <item
         android:id="@+id/bottomBarItemTwo"
-        android:icon="@mipmap/ic_forum"
+        android:icon="@mipmap/ic_launcher"
         android:title="Forum" />
     <item
         android:id="@+id/bottomBarItemThree"
-        android:icon="@mipmap/ic_klas"
+        android:icon="@mipmap/ic_launcher"
         android:title="Klas" />
     <item
         android:id="@+id/bottomBarItemFour"
-        android:icon="@mipmap/ic_profiel"
+        android:icon="@mipmap/ic_launcher"
         android:title="Profiel" />
 </menu>

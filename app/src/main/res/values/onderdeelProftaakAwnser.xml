@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="studentPostAwnser">
+        <item>Sarah Janssen</item>
+        <item>Yousef Adar</item>
+    </string-array>
+
+    <string-array name="studentPointsAwnser">
+        <item>12</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="studentPostDescriptionAwnser">
+        <item>Er werken er totaal 4/5 man in een proftaak. Ik hoop hiermee jou vraag te hebben beantwoord!</item>
+        <item>De onderdelen die aanbod komen zijn: samenwerken, documentatie, ontwerp en design technieken</item>
+    </string-array>
+</resources>
