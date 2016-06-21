@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.roel.qstudent.Models.Class.CustomPagerAdapter;
+import com.example.roel.qstudent.Models.Class.PageTransformer;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.R;
 
@@ -37,6 +38,9 @@ public class ClassActivity extends NavBar {
         pages.add(listview3);
 
         ViewPager vp = (ViewPager) findViewById(R.id.viewpager);
+
+        vp.setPageTransformer(true, new PageTransformer());
+
         CustomPagerAdapter adapter = new CustomPagerAdapter(mContext, pages);
         vp.setAdapter(adapter);
 
