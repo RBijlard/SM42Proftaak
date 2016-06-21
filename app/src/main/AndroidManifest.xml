@@ -14,7 +14,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,14 +22,6 @@
         <activity android:name=".Activitys.VakActivity" />
         <activity android:name=".Activitys.SemesterActivity" />
         <activity android:name=".Activitys.ClassActivity" />
-        <activity
-            android:name=".Models.Class.Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Models.Class.ClassAdapter2"
-            android:label="@string/title_activity_class_adapter2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
