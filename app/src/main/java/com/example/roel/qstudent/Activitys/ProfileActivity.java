@@ -38,6 +38,6 @@ public class ProfileActivity extends NavBar {
         CijferAdapter ca = new CijferAdapter(this, R.layout.profile_cust_listitem, cijfers);
 
         ListView cijferList = (ListView) findViewById(R.id.profileCijferList);
-        //cijferList.setAdapter(ca);
+        cijferList.setAdapter(ca);
     }
 }

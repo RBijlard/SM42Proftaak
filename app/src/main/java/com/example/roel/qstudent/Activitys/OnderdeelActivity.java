@@ -3,6 +3,7 @@ package com.example.roel.qstudent.Activitys;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.example.roel.qstudent.Models.Forum.ForumController;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.Models.Onderdeel;
 import com.example.roel.qstudent.Models.OnderdeelForum.OnderdeelAdapter;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
  */
 public class OnderdeelActivity extends NavBar {
 
-    OnderdeelController onderdeelController;
+    ForumController onderdeelController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,7 @@ public class OnderdeelActivity extends NavBar {
         Onderdelen.add(new Onderdeel("Opdracht week 15", null, null));
         Onderdelen.add( new Onderdeel("Koch Fractal", null, null));
 
-        onderdeelController = new OnderdeelController(Onderdelen);
+        onderdeelController = new ForumController();
 
 
         OnderdeelAdapter oa = new OnderdeelAdapter(this, R.layout.profile_cust_listitem, onderdeelController.getOnderdelen());

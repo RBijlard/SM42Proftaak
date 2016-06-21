@@ -1,49 +1,81 @@
 package com.example.roel.qstudent.Activitys;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
-import com.example.roel.qstudent.Models.Class.PagerAdapter;
+import com.example.roel.qstudent.Models.Class.CustomPagerAdapter;
+import com.example.roel.qstudent.Models.Class.PageTransformer;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.R;
 
+import java.util.Vector;
+
 public class ClassActivity extends NavBar {
-    FragmentPagerAdapter adapterViewPager;
+    private Context mContext;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        super.setupBar(this, savedInstanceState);
+        super.barLoaded(this);
+        mContext = this;
         setContentView(R.layout.activity_class);
-        super.setupBar(this);
 
-        ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
-        adapterViewPager = new PagerAdapter(getSupportFragmentManager());
-        vpPager.setAdapter(adapterViewPager);
+        final ListView listview1 = new ListView(mContext);
+        final ListView listview2 = new ListView(mContext);
+        final ListView listview3 = new ListView(mContext);
 
-        // Attach the page change listener inside the activity
-        vpPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        Vector<View> pages = new Vector<>();
 
-            // This method will be invoked when a new page becomes selected.
-            @Override
-            public void onPageSelected(int position) {
-                //Toast.makeText(this, "Selected page position: " + position, Toast.LENGTH_SHORT).show();
+        pages.add(listview1);
+        pages.add(listview2);
+        pages.add(listview3);
+
+        ViewPager vp = (ViewPager) findViewById(R.id.viewpager);
+
+        vp.setPageTransformer(true, new PageTransformer());
+
+        CustomPagerAdapter adapter = new CustomPagerAdapter(mContext, pages);
+        vp.setAdapter(adapter);
+
+        listview1.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, new String[]{"Henk Worst", "Berry Bob", "Bob Bouwer", "Hans Vucht", "James May",
+                "Daan Henk", "Hans G", "Joris Se", "Henk Schilder", "Pieter Jenson", "Joris En", "Test Naam"}));
+        listview2.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, new String[]{"Henk Worst", "Berry Bob", "Bob Bouwer", "Hans Vucht", "James May",
+                "Daan Henk", "Hans G", "Joris Se", "Henk Schilder", "Pieter Jenson", "Joris En", "Test Naam"}));
+        listview3.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, new String[]{"Henk Worst", "Berry Bob", "Bob Bouwer", "Hans Vucht", "James May",
+                "Daan Henk", "Hans G", "Joris Se", "Henk Schilder", "Pieter Jenson", "Joris En", "Test Naam"}));
+
+        listview1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                Object o = listview1.getItemAtPosition(position);
+                Toast.makeText(getBaseContext(), o.toString(), Toast.LENGTH_SHORT).show();
             }
+        });
 
-            // This method will be invoked when the current page is scrolled
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                // Code goes here
+        listview2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                Object o = listview1.getItemAtPosition(position);
+                Toast.makeText(getBaseContext(), o.toString(), Toast.LENGTH_SHORT).show();
             }
+        });
 
-            // Called when the scroll state changes:
-            // SCROLL_STATE_IDLE, SCROLL_STATE_DRAGGING, SCROLL_STATE_SETTLING
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                // Code goes here
+        listview3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                Object o = listview1.getItemAtPosition(position);
+                Toast.makeText(getBaseContext(), o.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-
 }
