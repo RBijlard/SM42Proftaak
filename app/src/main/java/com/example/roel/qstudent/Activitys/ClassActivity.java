@@ -38,10 +38,10 @@ public class ClassActivity extends NavBar {
 
         ViewPager vp = (ViewPager) findViewById(R.id.viewpager);
         CustomPagerAdapter adapter = new CustomPagerAdapter(mContext, pages);
-        vp.setAdapter(adapter); //, "Joris Se", "Henk Schilder", "Pieter Jenson", "Joris En", "Test Naam"
+        vp.setAdapter(adapter);
 
         listview1.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, new String[]{"Henk Worst", "Berry Bob", "Bob Bouwer", "Hans Vucht", "James May",
-                "Daan Henk", "Hans G"}));
+                "Daan Henk", "Hans G", "Joris Se", "Henk Schilder", "Pieter Jenson", "Joris En", "Test Naam"}));
         listview2.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, new String[]{"Henk Worst", "Berry Bob", "Bob Bouwer", "Hans Vucht", "James May",
                 "Daan Henk", "Hans G", "Joris Se", "Henk Schilder", "Pieter Jenson", "Joris En", "Test Naam"}));
         listview3.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, new String[]{"Henk Worst", "Berry Bob", "Bob Bouwer", "Hans Vucht", "James May",
