@@ -19,8 +19,8 @@ public class SemesterActivity extends NavBar {
         setContentView(R.layout.activity_vak);
         super.setupBar(this,savedInstanceState);
 
-        forumController = new ForumController();
+        forumController = new ForumController(this);
 
-        SemesterAdapter sa = new SemesterAdapter(this, R.layout.forum_cust_listitem, forumController.getSemester());
+        SemesterAdapter sa = new SemesterAdapter(this, R.layout.forum_cust_listitem, forumController.getSemesters());
     }
 }

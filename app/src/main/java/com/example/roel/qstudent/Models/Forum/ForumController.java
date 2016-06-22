@@ -39,13 +39,45 @@ public class ForumController {
         retrieveFromNetwork();
 
         //Mock Data
-        onderdelen.add(new Onderdeel("Presentatie",null));
-        onderdelen.add(new Onderdeel("Opdrachten",null));
-        onderdelen.add(new Onderdeel("Overige",null));
-        vakken.add(new Vak("SM42",onderdelen));
-        vakken.add(new Vak("JSF31",null));
-        semesters.add(new Semester("S31",vakken));
-        semesters.add(new Semester("S32",null));
+        onderdelen.add(new Onderdeel("Presentatie", null));
+        onderdelen.add(new Onderdeel("Opdrachten", null));
+        onderdelen.add(new Onderdeel("Overige", null));
+        vakken.add(new Vak("SM42", onderdelen));
+        vakken.add(new Vak("JSF31", null));
+        semesters.add(new Semester("S31", vakken));
+        semesters.add(new Semester("S32", null));
+    }
+
+    public ArrayList<Vak> getVakken() {
+        return vakken;
+    }
+
+    public void setVakken(ArrayList<Vak> vakken) {
+        this.vakken = vakken;
+    }
+
+    public ArrayList<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(ArrayList<Post> posts) {
+        this.posts = posts;
+    }
+
+    public ArrayList<Semester> getSemesters() {
+        return semesters;
+    }
+
+    public void setSemesters(ArrayList<Semester> semesters) {
+        this.semesters = semesters;
+    }
+
+    public ArrayList<Onderdeel> getOnderdelen() {
+        return onderdelen;
+    }
+
+    public void setOnderdelen(ArrayList<Onderdeel> onderdelen) {
+        this.onderdelen = onderdelen;
     }
 
     private void retrieveFromNetwork() {
