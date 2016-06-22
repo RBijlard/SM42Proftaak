@@ -1,11 +1,13 @@
 package com.example.roel.qstudent.Activitys;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class ClassActivity extends NavBar {
-    private Context mContext;
+    private Context context;
 
     //initializing all students
     private Student s1 = new Student("Pieter Jensen", null, null);
@@ -35,7 +37,7 @@ public class ClassActivity extends NavBar {
         super.onCreate(savedInstanceState);
         super.setupBar(this, savedInstanceState);
         super.barLoaded(this);
-        mContext = this;
+        context = this;
         setContentView(R.layout.activity_class);
 
         //initializing student list
@@ -48,13 +50,13 @@ public class ClassActivity extends NavBar {
         students.add(s6);
 
         //initializing all listviews and setting the adapters
-        final ListView listview1 = new ListView(mContext);
+        final ListView listview1 = new ListView(context);
         listview1.setAdapter(new ListAdapter(this, students));
 
-        final ListView listview2 = new ListView(mContext);
+        final ListView listview2 = new ListView(context);
         listview2.setAdapter(new ListAdapter(this, students));
 
-        final ListView listview3 = new ListView(mContext);
+        final ListView listview3 = new ListView(context);
         listview3.setAdapter(new ListAdapter(this, students));
 
         Vector<View> pages = new Vector<>();
@@ -64,28 +66,20 @@ public class ClassActivity extends NavBar {
         pages.add(listview2);
         pages.add(listview3);
 
-        ViewPager vp = (ViewPager) findViewById(R.id.viewpager);
-
+        final ViewPager vp = (ViewPager) findViewById(R.id.viewpager);
         vp.setPageTransformer(true, new PageTransformer());
 
-        CustomPagerAdapter adapter = new CustomPagerAdapter(mContext, pages);
+        CustomPagerAdapter adapter = new CustomPagerAdapter(context, pages);
         vp.setAdapter(adapter);
 
-//        listview1.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, new String[]{"Henk Worst", "Berry Bob", "Bob Bouwer", "Hans Vucht", "James May",
-//                "Daan Henk", "Hans G", "Joris Se", "Henk Schilder", "Pieter Jenson", "Joris En", "Test Naam"}));
-//        listview2.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, new String[]{"Henk Worst", "Berry Bob", "Bob Bouwer", "Hans Vucht", "James May",
-//                "Daan Henk", "Hans G", "Joris Se", "Henk Schilder", "Pieter Jenson", "Joris En", "Test Naam"}));
-//        listview3.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, new String[]{"Henk Worst", "Berry Bob", "Bob Bouwer", "Hans Vucht", "James May",
-//                "Daan Henk", "Hans G", "Joris Se", "Henk Schilder", "Pieter Jenson", "Joris En", "Test Naam"}));
-
-
-        //setting all the onclicklistners
+        //setting all the OnItemClickListener
         listview1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
                 Object o = listview1.getItemAtPosition(position);
-                Toast.makeText(getBaseContext(), o.toString(), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context, ProfileActivity.class);
+                context.startActivity(i);
             }
         });
 
@@ -94,7 +88,8 @@ public class ClassActivity extends NavBar {
                                     int position, long id) {
 
                 Object o = listview1.getItemAtPosition(position);
-                Toast.makeText(getBaseContext(), o.toString(), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context, ProfileActivity.class);
+                context.startActivity(i);
             }
         });
 
@@ -103,7 +98,8 @@ public class ClassActivity extends NavBar {
                                     int position, long id) {
 
                 Object o = listview1.getItemAtPosition(position);
-                Toast.makeText(getBaseContext(), o.toString(), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context, ProfileActivity.class);
+                context.startActivity(i);
             }
         });
     }
