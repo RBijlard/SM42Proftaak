@@ -4,37 +4,31 @@ package com.example.roel.qstudent.Models;
  * Created by Roel on 02/06/2016.
  */
 public class Bericht {
-    private String titel;
-    private String inhoud;
-    private Student poster;
+    public String posterName;
+    public String inhoud;
+    public int posterPicture;
+    public int upvote;
+    public int downvote;
+    public int punten;
 
-    public Bericht(String titel, String inhoud, Student poster) {
-        this.titel = titel;
+    public Bericht(String posterName, String inhoud, int posterPicture, int upvote, int downvote) {
+        this.posterName = posterName;
         this.inhoud = inhoud;
-        this.poster = poster;
+        this.posterPicture = posterPicture;
+        this.upvote = upvote;
+        this.downvote = downvote;
     }
 
-    public String getTitel() {
-        return titel;
-    }
+    public String getPostName(){return posterName;}
 
-    public void setTitel(String titel) {
-        this.titel = titel;
-    }
+    public String getInhoud(){return inhoud;}
 
-    public String getInhoud() {
-        return inhoud;
-    }
+    public int getPoster(){return posterPicture;}
 
-    public void setInhoud(String inhoud) {
-        this.inhoud = inhoud;
-    }
 
-    public Student getPoster() {
-        return poster;
-    }
-
-    public void setPoster(Student poster) {
-        this.poster = poster;
+    @Override
+    public String toString() {
+        String info = posterName + ' ' + inhoud + ' ' + posterPicture;
+        return info;
     }
 }

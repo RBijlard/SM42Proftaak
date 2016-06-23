@@ -35,11 +35,10 @@ public class ClassActivity extends NavBar {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_class);
         super.setupBar(this, savedInstanceState);
         super.barLoaded(this);
         context = this;
-        setContentView(R.layout.activity_class);
-
         //initializing student list
         ArrayList<Student> students = new ArrayList<>();
         students.add(s1);

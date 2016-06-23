@@ -13,6 +13,7 @@ import com.example.roel.qstudent.Models.Vak;
 import com.example.roel.qstudent.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,22 +22,21 @@ import java.util.List;
 public class SemesterAdapter extends ArrayAdapter<Semester> {
     Context con;
     int lrID;
-    List<Semester> data;
+    Object[] data;
     public SemesterAdapter(Context context, int resource, ArrayList<Semester> data) {
         super(context, resource);
         this.con=context;
         this.lrID=resource;
-        this.data = data;
+        this.data =  data.toArray();
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
-        if(convertView == null) {
-            LayoutInflater inf = ((Activity)con).getLayoutInflater();
-            convertView=inf.inflate(lrID,parent,false);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            LayoutInflater inf = ((Activity) con).getLayoutInflater();
+            convertView = inf.inflate(lrID, parent, false);
         }
-        Semester s= data.get(position);
+        Semester s = (Semester) data[position];
         TextView semesterNaam = (TextView) convertView.findViewById(R.id.textViewForumCustList);
 
         semesterNaam.setText(s.getNaam());

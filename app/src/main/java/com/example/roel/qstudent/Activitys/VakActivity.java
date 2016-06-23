@@ -1,14 +1,20 @@
 package com.example.roel.qstudent.Activitys;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.example.roel.qstudent.Models.Forum.ForumController;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
+import com.example.roel.qstudent.Models.Onderdeel;
 import com.example.roel.qstudent.Models.Vak;
 import com.example.roel.qstudent.Models.VakForum.VakAdapter;
 import com.example.roel.qstudent.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by royti on 9-6-2016.
@@ -22,15 +28,22 @@ public class VakActivity extends NavBar {
         setContentView(R.layout.activity_vak);
         super.setupBar(this, savedInstanceState);
         super.barLoaded(this);
-
-        /*
-        ArrayList<Vak> vakken = new ArrayList<>();
-        vakken.add(new Vak("JSF", null));
-        vakken.add(new Vak("SM41", null));
-        vakken.add(new Vak("GSO", null));*/
-
         vakController = new ForumController(this);
 
-        VakAdapter va = new VakAdapter(this, R.layout.forum_cust_listitem, vakController.getVakken());
+        String semester = getIntent().getStringExtra("Semester");
+
+        final ListView vaListview = (ListView) findViewById(R.id.semesterListView);
+        VakAdapter va = new VakAdapter(this, R.layout.forum_cust_listitem, vakController.getVakkenBijSemester(semester));
+        vaListview.setAdapter(va);
+
+        vaListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(parent.getContext(),Onderdeel.class);
+                intent.putExtra("Vak",vaListview.getItemAtPosition(position).toString());
+                startActivity(intent);
+            }
+        });
     }
 }

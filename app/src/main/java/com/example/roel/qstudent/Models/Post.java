@@ -6,14 +6,19 @@ import java.util.List;
  * Created by Roel on 02/06/2016.
  */
 public class Post {
-    private String naam;
-    private List<Bericht> berichten;
-    private Student poster;
+    public String naam;
+    public List<Bericht> berichten;
+    public String poster;
+    public int foto;
+    public String punt;
+    public String beschrijving;
+    public int aantalAntwoorden;
 
-    public Post(String naam, Student poster ,List<Bericht> berichten) {
+    public Post() {//String naam, String poster ,List<Bericht> berichten, int foto) {
         this.naam = naam;
         this.berichten = berichten;
         this.poster = poster;
+        this.foto = foto;
     }
 
     public List<Bericht> getBerichten() {
@@ -32,11 +37,25 @@ public class Post {
         this.naam = naam;
     }
 
-    public Student getPoster() {
+    public String getPoster() {
         return poster;
     }
 
-    public void setPoster(Student poster) {
+    public void setPoster(String poster) {
         this.poster = poster;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    @Override
+    public String toString() {
+        String info = naam + " " + poster + " " + berichten;
+        return info;
     }
 }
