@@ -1,16 +1,13 @@
 package com.example.roel.qstudent.Activitys;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.ListView;
 
+import com.example.roel.qstudent.Models.Main.MainAdapter;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.R;
+
+import java.util.List;
 
 public class MainActivity extends NavBar {
 
@@ -18,38 +15,33 @@ public class MainActivity extends NavBar {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
+        //Setup toolbar:
         super.setupBar(this, savedInstanceState);
         super.barLoaded(this);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        //Mock data:
+        String[] dataVJ = new String[] {
+                "Media strategie",
+                "Customer journey",
+                "Communicatiestrategie"
+        };
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
+        String[] dataHA = new String[] {
+                "SEO htaccess werkt niet?",
+                "Hoe moet ik een framework..",
+                "Leerdoelen voor prototyping"
+        };
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        //Adapters:
+        MainAdapter vja = new MainAdapter(this, R.layout.main_cust_listitem, dataVJ);
+        ListView vjList = (ListView) findViewById(R.id.mainVoorJouList);
+        vjList.setAdapter(vja);
 
-        return super.onOptionsItemSelected(item);
+        MainAdapter ha = new MainAdapter(this, R.layout.main_cust_listitem, dataHA);
+        ListView haList = (ListView) findViewById(R.id.mainHelpAnderenList);
+        haList.setAdapter(ha);
+
+
     }
 }

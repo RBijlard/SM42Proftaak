@@ -1,4 +1,4 @@
-package com.example.roel.qstudent.Models.Profile;
+package com.example.roel.qstudent.Models.Main;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,12 +14,12 @@ import com.example.roel.qstudent.R;
 /**
  * Created by Robin on 6/4/2016.
  */
-public class CijferAdapter extends ArrayAdapter<Cijfer> {
+public class MainAdapter extends ArrayAdapter<String> {
     Context con;
     int lrID;
-    Cijfer[] data;
+    String[] data;
 
-    public CijferAdapter(Context mContext, int layoutResourceId, Cijfer[] data) {
+    public MainAdapter(Context mContext, int layoutResourceId, String[] data) {
         super(mContext, layoutResourceId, data);
         this.con = mContext;
         this.lrID = layoutResourceId;
@@ -32,13 +32,10 @@ public class CijferAdapter extends ArrayAdapter<Cijfer> {
             LayoutInflater inf = ((Activity) con).getLayoutInflater();
             convertView= inf.inflate(lrID, parent, false);
         }
-        Cijfer c = data[position];
-        TextView vaknaam = (TextView) convertView.findViewById(R.id.custVaknaam);
-        //TextView cijfer= (TextView) convertView.findViewById(R.id.custCijfer);
+        String s = data[position];
+        TextView description = (TextView) convertView.findViewById(R.id.mainDescription);
 
-        String rsc= c.getNaamVak() + ":\t " + c.getCijfer() + "\t F:1337";
-        vaknaam.setText(rsc);
-        //cijfer.setText(""+c.getCijfer()); //Set cijfer hier
+        description.setText(s);
         return convertView;
     }
 }

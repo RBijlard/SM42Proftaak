@@ -91,5 +91,17 @@ public class ForumController {
         }
     }
 
+    public ArrayList<Onderdeel> getOnderdelen() {
+        return onderdelen;
+    }
+
+    public ArrayList<Semester> getSemesters() {
+        return semesters;
+    }
+
+    public ArrayList<Vak> getVakken() {
+        return vakken;
+    }
+
 
 }

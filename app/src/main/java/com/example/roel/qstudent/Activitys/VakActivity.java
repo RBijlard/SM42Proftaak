@@ -29,7 +29,7 @@ public class VakActivity extends NavBar {
         vakken.add(new Vak("SM41", null));
         vakken.add(new Vak("GSO", null));*/
 
-        vakController = new ForumController();
+        vakController = new ForumController(this);
 
         VakAdapter va = new VakAdapter(this, R.layout.forum_cust_listitem, vakController.getVakken());
     }

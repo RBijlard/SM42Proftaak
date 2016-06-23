@@ -7,6 +7,7 @@ import com.example.roel.qstudent.Models.Forum.ForumController;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.Models.Onderdeel;
 import com.example.roel.qstudent.Models.OnderdeelForum.OnderdeelAdapter;
+import com.example.roel.qstudent.Models.Post;
 import com.example.roel.qstudent.R;
 
 import java.util.ArrayList;
@@ -26,11 +27,11 @@ public class OnderdeelActivity extends NavBar {
 
         //Mock Onderdelen:
         ArrayList<Onderdeel> Onderdelen = new ArrayList<>();
-        Onderdelen.add(new Onderdeel("Framework",null,null));
-        Onderdelen.add(new Onderdeel("Opdracht week 15", null, null));
-        Onderdelen.add( new Onderdeel("Koch Fractal", null, null));
+        Onderdelen.add(new Onderdeel("Framework", new ArrayList<Post>()));
+        Onderdelen.add(new Onderdeel("Opdracht week 15", new ArrayList<Post>()));
+        Onderdelen.add( new Onderdeel("Koch Fractal", new ArrayList<Post>()));
 
-        onderdeelController = new ForumController();
+        onderdeelController = new ForumController(this);
 
 
         OnderdeelAdapter oa = new OnderdeelAdapter(this, R.layout.profile_cust_listitem, onderdeelController.getOnderdelen());
