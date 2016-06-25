@@ -29,4 +29,9 @@ public class Vak {
     public void setOnderdelen(List<Onderdeel> onderdelen) {
         this.onderdelen = onderdelen;
     }
+
+    @Override
+    public String toString() {
+        return naam;
+    }
 }

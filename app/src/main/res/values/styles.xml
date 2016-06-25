@@ -21,7 +21,11 @@
 
     <style name="PagerTabStripText">
         <item name="android:textSize">25sp</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/primaryOrange</item>
     </style>
+
+    <style name="post_textsize">
+        <item name="android:textSize">15dp</item>
+    </style>
+
 </resources>

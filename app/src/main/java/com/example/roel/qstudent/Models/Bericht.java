@@ -1,9 +1,11 @@
 package com.example.roel.qstudent.Models;
 
+import java.io.Serializable;
+
 /**
  * Created by Roel on 02/06/2016.
  */
-public class Bericht {
+public class Bericht implements Serializable {
     public String posterName;
     public String inhoud;
     public int posterPicture;
@@ -19,11 +21,17 @@ public class Bericht {
         this.downvote = downvote;
     }
 
-    public String getPostName(){return posterName;}
+    public String getPostName() {
+        return posterName;
+    }
 
-    public String getInhoud(){return inhoud;}
+    public String getInhoud() {
+        return inhoud;
+    }
 
-    public int getPoster(){return posterPicture;}
+    public int getPoster() {
+        return posterPicture;
+    }
 
 
     @Override

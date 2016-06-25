@@ -29,4 +29,9 @@ public class Semester {
     public void setVakken(List<Vak> vakken) {
         this.vakken = vakken;
     }
+
+    @Override
+    public String toString() {
+        return naam;
+    }
 }

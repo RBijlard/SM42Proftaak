@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="studentPostTitle">
+        <item>Hoeveel leden werken er in een proftaak?</item>
+        <item>Welke onderdelen komen er aanbod?</item>
+        <item>Hulp nodig met een start project opzetten</item>
+        <item>Hulp nodig met project document</item>
+    </string-array>
+
+    <string-array name="studentPost">
+        <item>Bert smit</item>
+        <item>Claudia Pols</item>
+        <item>Sarah Janssen</item>
+        <item>Yousef Adador</item>
+    </string-array>
+
+    <string-array name="studentPoints">
+        <item>120</item>
+        <item>600</item>
+        <item>380</item>
+        <item>490</item>
+        <item>500</item>
+        <item>300</item>
+    </string-array>
+
+    <string-array name="studentPostDescription">
+        <item>Ik vroeg me af hoeveel leden er in een proftaak groep werkte?</item>
+        <item>Welke onderdelen komen er aanbod bij de proftaak? Ik wil me hier graag in verdiepen</item>
+        <item>Wat heb ik nodig bij het opstarten van een project? Iemand een idee?</item>
+        <item>Wat voor onderwerpen komen er in een project document voor? Iemand een idee?</item>
+    </string-array>
+</resources>

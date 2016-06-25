@@ -30,16 +30,15 @@ public class SemesterActivity extends NavBar {
         ListView lvSemester = (ListView) findViewById(R.id.semesterListView);
         lvSemester.setAdapter(sa);
 
-        /*
         lvSemester.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(parent.getContext(),VakActivity.class);
-                //intent.putExtra("Semester", lvSemester.getItemAtPosition(position).toString());
+                intent.putExtra("Semester", forumController.getSemesters().get(position).toString());
                 startActivity(intent);
 
             }
-        });*/
+        });
 
     }
 }

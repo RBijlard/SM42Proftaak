@@ -29,4 +29,9 @@ public class Onderdeel {
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
+
+    @Override
+    public String toString() {
+        return naam;
+    }
 }

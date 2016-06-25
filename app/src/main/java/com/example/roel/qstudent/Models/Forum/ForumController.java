@@ -100,7 +100,7 @@ public class ForumController {
 
     public ArrayList<Vak> getVakkenBijSemester(String semester) {
         for (Semester s : semesters) {
-            if (s.getNaam().equals("semester")) {
+            if (s.getNaam().equals(semester)) {
                 return (ArrayList<Vak>) s.getVakken();
             }
         }

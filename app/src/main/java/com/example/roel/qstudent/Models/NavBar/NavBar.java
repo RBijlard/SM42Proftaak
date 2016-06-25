@@ -11,9 +11,11 @@ import android.util.Log;
 
 import com.example.roel.qstudent.Activitys.ClassActivity;
 import com.example.roel.qstudent.Activitys.MainActivity;
+import com.example.roel.qstudent.Activitys.OnderdeelActivity;
 import com.example.roel.qstudent.Activitys.ProfileActivity;
 import com.example.roel.qstudent.Activitys.SemesterActivity;
 import com.example.roel.qstudent.Activitys.VakActivity;
+import com.example.roel.qstudent.Models.Forum.Post_activity;
 import com.example.roel.qstudent.R;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
@@ -50,6 +52,15 @@ public class NavBar extends AppCompatActivity implements OnMenuTabClickListener 
         } else if (act instanceof ProfileActivity) {
             bar.selectTabAtPosition(3, false);
             init = true;
+        } else if(act instanceof VakActivity) {
+            bar.selectTabAtPosition(1, false);
+            init=true;
+        } else if(act instanceof OnderdeelActivity) {
+            bar.selectTabAtPosition(1, false);
+            init=true;
+        } else if (act instanceof Post_activity){
+            bar.selectTabAtPosition(1,false);
+            init=true;
         }
     }
 

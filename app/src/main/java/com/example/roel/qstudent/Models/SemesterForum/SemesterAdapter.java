@@ -22,12 +22,17 @@ import java.util.List;
 public class SemesterAdapter extends ArrayAdapter<Semester> {
     Context con;
     int lrID;
-    Object[] data;
+    ArrayList<Semester> data;
     public SemesterAdapter(Context context, int resource, ArrayList<Semester> data) {
         super(context, resource);
         this.con=context;
         this.lrID=resource;
-        this.data =  data.toArray();
+        this.data =  data;
+    }
+
+    @Override
+    public int getCount() {
+        return data.size();
     }
 
     @Override
@@ -36,7 +41,7 @@ public class SemesterAdapter extends ArrayAdapter<Semester> {
             LayoutInflater inf = ((Activity) con).getLayoutInflater();
             convertView = inf.inflate(lrID, parent, false);
         }
-        Semester s = (Semester) data[position];
+        Semester s = data.get(position);
         TextView semesterNaam = (TextView) convertView.findViewById(R.id.textViewForumCustList);
 
         semesterNaam.setText(s.getNaam());

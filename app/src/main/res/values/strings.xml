@@ -15,4 +15,17 @@
         <item>Henk Schilder</item>
         <item>Berta Koe</item>
     </string-array>
+
+    <string name="txtStudentName">Persons: </string>
+    <string name="txtPostName">Bericht: </string>
+    <string name="txtPostDescription">Cooking time: </string>
+    <string name="txtDescription">Description: </string>
+    <string name="title_activity_activity_test2">ActivityTest2</string>
+    <string name="title_activity_post_awnsers">postAwnsers</string>
+    <string name="title_activity_awnser_list">AwnserList</string>
+    <string name="title_activity_reactie">Reactie</string>
+    <string name="title_activity_postitemrow">postitemrow</string>
+    <string name="title_activity_post">Post</string>
+    <string name="title_activity_post_list">PostList</string>
+
 </resources>

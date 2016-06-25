@@ -31,19 +31,23 @@ public class VakActivity extends NavBar {
         vakController = new ForumController(this);
 
         String semester = getIntent().getStringExtra("Semester");
+        ArrayList<Vak> vakken = vakController.getVakkenBijSemester(semester);
 
-        final ListView vaListview = (ListView) findViewById(R.id.semesterListView);
-        VakAdapter va = new VakAdapter(this, R.layout.forum_cust_listitem, vakController.getVakkenBijSemester(semester));
-        vaListview.setAdapter(va);
+        if (vakken != null) {
+            VakAdapter va = new VakAdapter(this, R.layout.forum_cust_listitem, vakken);
+            final ListView vaListview = (ListView) findViewById(R.id.vakListView);
+            vaListview.setAdapter(va);
 
-        vaListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            vaListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(parent.getContext(),Onderdeel.class);
-                intent.putExtra("Vak",vaListview.getItemAtPosition(position).toString());
-                startActivity(intent);
-            }
-        });
+                    Intent intent = new Intent(parent.getContext(), OnderdeelActivity.class);
+                    intent.putExtra("Vak", vakController.getVakken().get(position).toString());
+                    startActivity(intent);
+                }
+            });
+        }
+
     }
 }

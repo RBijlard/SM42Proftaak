@@ -21,6 +21,34 @@
         <activity android:name=".Activitys.VakActivity" />
         <activity android:name=".Activitys.SemesterActivity" />
         <activity android:name=".Activitys.ClassActivity" />
+        <activity android:name=".Activitys.OnderdeelActivity" />
+        <activity
+            android:name=".Models.Forum.AwnserList"
+            android:label="@string/title_activity_awnser_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Models.Forum.Reactie"
+            android:label="@string/title_activity_reactie"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Models.Forum.postitemrow"
+            android:label="@string/title_activity_postitemrow"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Models.Forum.postAwnsers"
+            android:label="@string/title_activity_post_awnsers"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Models.Forum.Post_activity"
+            android:label="@string/title_activity_post"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Models.Forum.PostList"
+            android:label="@string/title_activity_post_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>

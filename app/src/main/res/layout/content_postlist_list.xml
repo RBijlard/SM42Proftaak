@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:id="@+id/relativelayoutInformation"
+                android:background="@color/QuestionColor">
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtPostName"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/postTitle"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="21dp"
+                    android:layout_marginLeft="10dip"/>
+
+                <ImageView
+                    android:layout_width="150dip"
+                    android:layout_height="125dip"
+                    android:id="@+id/postStudentPicture"
+                    android:layout_below="@+id/postTitle" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/postStudentName"
+                    android:layout_below="@+id/postStudentPicture"
+                    android:layout_marginLeft="20dip"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:text="..."
+                    android:layout_width="wrap_content"
+                    android:id="@+id/studentBeschrijving"
+                    android:layout_toRightOf="@+id/postStudentPicture"
+                    android:layout_below="@+id/postTitle"
+                    android:layout_marginTop="3dip"
+                    style="@style/post_textsize"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@android:color/holo_orange_dark"
+                    android:layout_below="@+id/postStudentName" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="400dip"
+        android:layout_height="1000dip">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="170dip">
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listViewAwnsers"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="44dp" />
+
+            <ImageButton
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:id="@+id/createAwnser"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/cross"
+                android:background="@drawable/customawnserbutton"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

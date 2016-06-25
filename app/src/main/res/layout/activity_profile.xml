@@ -32,6 +32,8 @@
                 android:layout_gravity="center"
                 android:paddingLeft="10dp"
                 android:text="Bertje Bertsma"
+                android:textColor="@color/primaryOrange"
+                android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </LinearLayout>
@@ -49,7 +51,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
             android:paddingTop="15dp"
-            android:text="Email: EMAIL@EMAIL.COM"
+            android:text="Email: b.bertsma@qstudent.COM"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <View
@@ -63,7 +65,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
             android:paddingTop="15dp"
-            android:text="Klas: KLAS"
+            android:text="Klas: SM41"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <View
@@ -77,6 +79,8 @@
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
             android:paddingTop="15dp"
+            android:textColor="@color/primaryOrange"
+            android:textStyle="bold"
             android:text="Cijfers:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 

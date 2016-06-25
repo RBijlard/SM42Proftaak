@@ -30,6 +30,11 @@ public class OnderdeelAdapter extends ArrayAdapter<Onderdeel> {
     }
 
     @Override
+    public int getCount() {
+        return data.size();
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
         if(convertView == null) {

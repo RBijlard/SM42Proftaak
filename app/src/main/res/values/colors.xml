@@ -5,4 +5,12 @@
     <color name="colorAccent">#FF4081</color>
     <color name="primaryOrange">#fc5722</color>
     <color name="primaryBlue">#195382</color>
+
+    <color name="Qblue">#3F51B5</color>
+    <color name="Qorange">#F5882F</color>
+
+    <color name="DividerPost">#3F51B5</color>
+    <color name="DividerQuestion">#F5882F</color>
+    <color name="QuestionColor">#d0dfec</color>
+
 </resources>

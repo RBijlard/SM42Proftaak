@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.roel.qstudent.Models.Forum.ForumController;
+import com.example.roel.qstudent.Models.Forum.Post_activity;
 import com.example.roel.qstudent.Models.NavBar.NavBar;
 import com.example.roel.qstudent.Models.Onderdeel;
 import com.example.roel.qstudent.Models.OnderdeelForum.OnderdeelAdapter;
@@ -22,27 +23,30 @@ import java.util.ArrayList;
 public class OnderdeelActivity extends NavBar {
 
     ForumController onderdeelController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onderdeel);
-        super.setupBar(this,savedInstanceState);
+        super.setupBar(this, savedInstanceState);
+        super.barLoaded(this);
 
         onderdeelController = new ForumController(this);
-
         String vak = getIntent().getStringExtra("Vak");
+        ArrayList<Onderdeel> onderdelen = onderdeelController.getOnderdeelBijVak(vak);
 
-        final ListView OnderdeelList = (ListView) findViewById(R.id.onderdeelListView);
-        OnderdeelAdapter oa = new OnderdeelAdapter(this, R.layout.profile_cust_listitem, onderdeelController.getOnderdeelBijVak("Vak"));
-        OnderdeelList.setAdapter(oa);
+        if (onderdelen != null) {
+            final ListView OnderdeelList = (ListView) findViewById(R.id.onderdeelListView);
+            OnderdeelAdapter oa = new OnderdeelAdapter(this, R.layout.forum_cust_listitem, onderdelen);
+            OnderdeelList.setAdapter(oa);
 
-        OnderdeelList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(parent.getContext(),VakActivity.class);
-                intent.putExtra("Onderdeel",OnderdeelList.getItemAtPosition(position).toString());
-                startActivity(intent);
-            }
-        });
+            OnderdeelList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(view.getContext(), Post_activity.class);
+                    startActivity(intent);
+                }
+            });
+        }
     }
 }
